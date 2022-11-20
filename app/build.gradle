@@ -1,0 +1,103 @@
+apply plugin: 'com.android.application'
+
+Properties properties = new Properties()
+def localProp = file(project.rootProject.file('local.properties'))
+if (localProp.exists()) {
+    properties.load(localProp.newDataInputStream())
+}
+def keyFile = file(properties.getProperty("keystore.path") ?: "/tmp/does_not_exist")
+
+android {
+    signingConfigs {
+        config {
+            keyAlias properties.getProperty("keystore.alias")
+            keyPassword properties.getProperty("keystore.pwd")
+            storeFile keyFile
+            storePassword properties.getProperty("keystore.alias_pwd")
+        }
+    }
+
+    compileSdkVersion 30
+    buildToolsVersion '30.0.0'
+    defaultConfig {
+        applicationId "io.va.exposed64"
+        minSdkVersion 21
+        targetSdkVersion 23
+        versionCode 220
+        versionName "0.22.0"
+        multiDexEnabled false
+        android {
+            defaultConfig {
+                ndk {
+                    abiFilters "arm64-v8a", "x86_64"
+                }
+            }
+        }
+    }
+    // https://developer.android.com/studio/build/gradle-plugin-3-0-0-migration.html?utm_source=android-studio
+    flavorDimensions 'main'
+    productFlavors {
+        aosp {
+            dimension 'main'
+            //matchingFallbacks ['aosp']
+            if (keyFile.exists()) {
+                signingConfig signingConfigs.config
+            }
+        }
+
+        fdroid {
+            dimension 'main'
+        }
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            debuggable false
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation project(':lib')
+    implementation project(':launcher')
+    //Android Lib
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support:recyclerview-v7:27.1.1'
+    implementation 'com.android.support:design:27.1.1'
+    //Promise Support
+    implementation 'org.jdeferred:jdeferred-android-aar:1.2.4'
+    // ThirdParty
+    implementation 'com.jonathanfinerty.once:once:1.0.3'
+
+    def appCenterSdkVersion = '3.0.0'
+    aospImplementation("com.microsoft.appcenter:appcenter-analytics:${appCenterSdkVersion}")
+    aospImplementation("com.microsoft.appcenter:appcenter-crashes:${appCenterSdkVersion}")
+
+    implementation 'com.kyleduo.switchbutton:library:1.4.6'
+    implementation 'com.allenliu.versionchecklib:library:1.8.3'
+    implementation 'com.github.medyo:android-about-page:1.2.2'
+    implementation 'moe.feng:AlipayZeroSdk:1.1'
+
+    //Glide
+    implementation ('com.github.bumptech.glide:glide:4.8.0') {
+        exclude(group: "com.android.support")
+    }
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
+}

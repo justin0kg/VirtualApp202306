@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/item_app_checked"
+        android:layout_width="23dp"
+        android:layout_height="23dp"
+        android:layout_gravity="top|end"
+        android:src="@drawable/ic_no_check" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start|center"
+        android:gravity="start|center"
+        android:orientation="horizontal"
+        android:paddingLeft="24dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp">
+
+        <ImageView
+            android:id="@+id/item_app_icon"
+            android:layout_width="32dp"
+            android:layout_height="32dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start|center"
+            android:orientation="vertical"
+            android:paddingLeft="10dp">
+
+            <TextView
+                android:id="@+id/item_app_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="marquee"
+                android:focusableInTouchMode="true"
+                android:gravity="center"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:singleLine="true"
+                android:textColor="@color/desktopColorB"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <io.virtualapp.widgets.LabelView xmlns:lv="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/item_app_clone_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|start"
+        android:visibility="invisible"
+        lv:lv_background_color="#F6CE59"
+        lv:lv_fill_triangle="true"
+        lv:lv_gravity="BOTTOM_LEFT"
+        lv:lv_text="2"
+        lv:lv_text_all_caps="false"
+        lv:lv_text_color="@android:color/white"
+        lv:lv_text_size="12sp" />
+
+</FrameLayout>

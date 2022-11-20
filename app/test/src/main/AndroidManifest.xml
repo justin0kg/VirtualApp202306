@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.test">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+
+    <application
+        android:name=".App"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+
+        <activity android:name=".BroadcastTestActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".TestActivity"
+            android:label="@string/app_name">
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+        </activity>
+
+        <receiver android:name=".DownloadReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.DOWNLOAD_COMPLETE" />
+                <action android:name="android.intent.action.DOWNLOAD_NOTIFICATION_CLICKED" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name=".TestService" />
+        <service android:name=".TestMultiBindService" />
+
+        <activity
+            android:name=".forward_result.PreActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".forward_result.AActivity"
+            android:theme="@android:style/Theme.Holo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".forward_result.BActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".forward_result.CActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".forward_result.PostActivity"
+            android:screenOrientation="portrait" />
+
+        <activity android:name=".launch_mode.StandardActivity" />
+        <activity
+            android:name=".launch_mode.StandardActivity2"
+            android:launchMode="singleTask"
+            android:taskAffinity="affinity.standard2" />
+        <activity
+            android:name=".launch_mode.SingleInstanceActivity"
+            android:launchMode="singleInstance" />
+
+        <activity android:name=".MainActivity" />
+
+        <service
+            android:name=".MyJobService"
+            android:exported="true"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+    </application>
+
+</manifest>

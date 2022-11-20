@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:text="Broadcast Test:"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_margin="5dp"
+        android:text="uid:"
+        android:id="@+id/uid"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="TestBroadcast"
+        android:layout_margin="10dp"
+        android:id="@+id/send_context"
+        />
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      android:gravity="center"
+      >
+      <Button
+          android:layout_width="100dp"
+          android:layout_height="50dp"
+          android:text="随机文本"
+          android:layout_gravity="center"
+          android:id="@+id/btn_rand_msg"
+          />
+      <Button
+          android:layout_width="120dp"
+          android:layout_height="50dp"
+          android:text="广播General"
+          android:layout_gravity="center"
+          android:id="@+id/btn_send_general"
+          />
+      <Button
+          android:layout_width="120dp"
+          android:layout_height="50dp"
+          android:text="广播Unique"
+          android:layout_gravity="center"
+          android:id="@+id/btn_send_unique"
+          />
+      <Button
+          android:layout_width="120dp"
+          android:layout_height="50dp"
+          android:text="广播VA"
+          android:layout_gravity="center"
+          android:id="@+id/btn_send_va"
+          />
+  </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:text="最后接收的广播信息:"
+        android:layout_marginTop="10dp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_margin="5dp"
+        android:minLines="1"
+        android:singleLine="false"
+        android:text=""
+        android:scrollbars="vertical"
+        android:id="@+id/recv"
+        />
+
+
+</LinearLayout>
