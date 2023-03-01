@@ -15,6 +15,7 @@ Compared with VirtualApp, MultipleAccounts, ParallelSpace, our advantages:
 There are two ways of cooperation：
 1. Purchase source code of  professional version, upgrade for free within 1 years, the adaptation of the New Android and App will be provided in the form of patches
 2. Highly customized development, including the development of various plug-ins, the cracking of various hardened apps, the decryption of various encrypted apps, etc.
+
 my contact is: huangyao1130@gmail.com，All contracts and agreements will be signed with the main body of the company that has been established for more than 2 years to ensure the spirit of the contract and service
 
 We were a Google Play top developer, Multliple Accounts App have accumulated hundreds of millions of downloads and tens of millions of monthly active users
