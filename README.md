@@ -4,6 +4,7 @@
 **1. Support China Wechat on Android 12**
 
 **2. Support BlackBox A/B Package**
+
 **3. Support real-money gambling games to be listed on Google Play in the form of A/B packages.**
 
 
