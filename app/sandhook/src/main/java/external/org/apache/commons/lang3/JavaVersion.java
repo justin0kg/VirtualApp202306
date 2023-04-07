@@ -16,14 +16,6 @@
  */
 package external.org.apache.commons.lang3;
 
-/**
- * <p>An enum representing all the versions of the Java specification.
- * This is intended to mirror available values from the
- * <em>java.specification.version</em> System property. </p>
- *
- * @since 3.0
- * @version $Id: $
- */
 public enum JavaVersion {
     
     /**
