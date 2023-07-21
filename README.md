@@ -1,11 +1,13 @@
 # VirtualApp2022
 
 #### UPDATA
-**1. Support China Wechat on Android 12**
+**1. Support Android 13**
 
 **2. Support BlackBox rePackage**
 
 **3. Support real-money gambling games to be listed on Google Play in the form of A/B packages.**
+
+**3. Support AppsFly Adjust**
 
 
 Virtual App（Multiple Accounts or parallel space）Professional(support Android 4.0 - Android 13)
