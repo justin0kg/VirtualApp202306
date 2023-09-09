@@ -1,13 +1,14 @@
 # VirtualApp2022
 
 #### UPDATA
-**1. Support Android 13**
 
-**2. Support BlackBox rePackage**
+**1. Support anti Adjust/Appfly fingerprint**
 
-**3. Support real-money gambling games to be listed on Google Play in the form of A/B packages.**
+**2. Support Android 13**
 
-**3. Support AppsFly Adjust**
+**3. Support BlackBox rePackage**
+
+**4. Support real-money gambling games to be listed on Google Play in the form of A/B packages.**
 
 
 Virtual App（Multiple Accounts or parallel space）Professional(support Android 4.0 - Android 13)
